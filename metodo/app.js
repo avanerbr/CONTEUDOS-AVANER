@@ -403,6 +403,17 @@ function stageName(item){
   for(let i = STAGES.length-1; i >= 0; i--) if(ex[STAGES[i]]) return L[STAGES[i]];
   return 'A produzir';
 }
+function nextAction(item){
+  if(item.tipo === 'extra') return {txt:'Banco editorial: precisa de roteiro', cls:'res'};
+  const ex = execOf(item.id); const b = blockInfo(item); const L = item.tipo === 'ad' ? LABEL_AD : LABEL_REEL;
+  if(ex.publicado) return {txt:(item.tipo === 'ad' ? 'No ar ✓' : 'Publicado ✓'), cls:'ok'};
+  if(b.bloqueio.length) return {txt:'Bloqueado: falta '+b.bloqueio.join(', '), cls:'bloq'};
+  if(!ex.aprovado) return {txt:'Próximo: aprovar o roteiro', cls:''};
+  if(!ex.gravado) return {txt:'Próximo: '+(item.tipo === 'ad' ? 'produzir' : 'gravar'), cls:''};
+  if(!ex.editado) return {txt:'Próximo: '+(item.tipo === 'ad' ? 'subir no gerenciador' : 'editar'), cls:''};
+  if(b.publicacao.length) return {txt:'Pronto, mas publicação travada: falta '+b.publicacao.join(', '), cls:'pub'};
+  return {txt:'Próximo: '+(item.tipo === 'ad' ? 'colocar no ar' : 'publicar'), cls:''};
+}
 function reelCard(r){
   const f = M.formatos[r.formato];
   return '<button type="button" class="card" data-open="'+r.id+'">'+
@@ -410,7 +421,7 @@ function reelCard(r){
     '<div class="head"><span class="pill">'+dateBR(r.data)+' '+esc(r.hora)+'</span><span class="pill">Fase '+r.fase+'</span><span class="pill">'+esc(f ? r.formato+'. '+f.nome : '')+'</span>'+(r.classe === 'reserva' ? '<span class="pill res">Reserva</span>' : '')+'<span class="pill">'+esc(M.lotes[r.lote] ? M.lotes[r.lote].nome : r.lote)+'</span></div>'+
     '<p class="hook">“'+esc(r.gancho)+'”</p>'+
     '<div class="head">'+statusPills(r)+'</div>'+
-    '<div class="meta">'+esc(stageName(r))+' · '+esc(r.duracao)+' · v'+esc(r.versao)+'</div>'+stageBar(r)+'</button>';
+    '<div class="meta">'+esc(nextAction(r).txt)+' · '+esc(r.duracao)+' · v'+esc(r.versao)+'</div>'+stageBar(r)+'</button>';
 }
 function adCard(a){
   return '<button type="button" class="card" data-open="'+a.id+'">'+
@@ -506,7 +517,14 @@ function renderHoje(){
 /* ---------- Calendário ---------- */
 function renderCalendario(){
   const t = hoje(); const showRes = store.get('metodo-cal-res', true);
-  let h = '<p class="eyebrow">Publicação</p><h2>Calendário</h2><p class="lede">Reels de 31/10 a 29/11 e início dos anúncios. Borda verde: publicado. Borda vermelha: bloqueado. Tracejado: reserva.</p>'+
+  let h = '<p class="eyebrow">Seu plano de trabalho</p><h2>Calendário</h2><p class="lede">Reels de 31/10 a 29/11 e início dos anúncios. Cada peça mostra o próximo passo. Borda verde: publicado. Borda vermelha: bloqueado. Tracejado: reserva.</p>'+
+    '<details class="howto" '+(store.get('metodo-howto-fechado', false) ? '' : 'open')+'><summary>Como trabalhar pelo calendário</summary><ol>'+
+      '<li><b>Clique numa peça</b> do dia. Abre a ficha com o roteiro, o guia, o cenário e a câmera.</li>'+
+      '<li>Cada peça mostra o <b>próximo passo</b>: aprovar, gravar, editar ou publicar. Vermelho = bloqueado (a ficha diz o que falta e qual é a alternativa).</li>'+
+      '<li>Para gravar, use <b>▶ Teleprompter</b> (texto rolando) ou <b>▶ Modo guia</b> (só os 5 tópicos, para falar com as suas palavras).</li>'+
+      '<li>Depois de cada etapa, clique em <b>Gravado</b>, <b>Editado</b> ou <b>Publicado</b> na ficha. Fica salvo para todos.</li>'+
+      '<li>Grave com antecedência: a aba <b>Lotes</b> mostra o que dá para gravar junto, e a aba <b>Pendências</b> mostra o que falta para destravar.</li>'+
+      '</ol></details>'+
     '<div class="filters"><label class="small"><input type="checkbox" id="calRes" '+(showRes ? 'checked' : '')+'> Mostrar reservas</label></div>';
   h += '<div class="cal-week">'+['seg','ter','qua','qui','sex','sáb','dom'].map(d => '<div class="cal-head">'+d+'</div>').join('')+'</div>';
   const start = parseISO('2026-10-26'), end = parseISO('2026-11-29');
@@ -520,7 +538,7 @@ function renderCalendario(){
       h += '<div class="cal-day'+(iso === t ? ' today' : '')+(iso === M.campanha.live ? ' live' : '')+(out || (!reels.length && !adsIni.length && iso !== M.campanha.live) ? ' out' : '')+'" data-day="'+iso+'">'+
         '<div class="d"><span>'+WEEKDAY[d.getDay()]+' '+dateBR(iso)+'</span>'+(iso === M.campanha.live ? '<span>LIVE '+esc(M.campanha.live_hora)+'</span>' : '')+(iso === M.campanha.fim_condicao ? '<span>fim turma</span>' : '')+'</div>'+
         reels.map(r => { const b = blockInfo(r); const ex = execOf(r.id);
-          return '<button type="button" class="cal-item'+(ex.publicado ? ' st-pub' : b.bloqueio.length ? ' st-bloq' : '')+(r.classe === 'reserva' ? ' res' : '')+'" data-open="'+r.id+'"><b>'+r.id+'</b> '+esc(r.hora)+' · '+esc(r.tema)+'<br><span class="muted">'+esc(stageName(r))+'</span></button>'; }).join('')+
+          return '<button type="button" class="cal-item'+(ex.publicado ? ' st-pub' : b.bloqueio.length ? ' st-bloq' : '')+(r.classe === 'reserva' ? ' res' : '')+'" data-open="'+r.id+'"><b>'+r.id+'</b> '+esc(r.hora)+' · '+esc(r.tema)+'<br><span class="na '+nextAction(r).cls+'">'+esc(nextAction(r).txt)+'</span></button>'; }).join('')+
         (adsIni.length ? '<div class="cal-ads">▶ anúncios: '+adsIni.map(a => a.id).join(', ')+'</div>' : '')+
         '</div>';
       d.setDate(d.getDate()+1);
@@ -529,6 +547,7 @@ function renderCalendario(){
   }
   $('#view-calendario').innerHTML = h;
   $('#calRes').onchange = e => { store.set('metodo-cal-res', e.target.checked); renderCalendario(); };
+  const ht = $('#view-calendario .howto'); if(ht) ht.addEventListener('toggle', () => store.set('metodo-howto-fechado', !ht.open));
 }
 
 /* ---------- Reels ---------- */
@@ -793,7 +812,7 @@ window.MetodoTP = tp;
 const VIEWS = ['hoje','calendario','reels','anuncios','lotes','pendencias','resultados','formatos'];
 const RENDER = {hoje:renderHoje, calendario:renderCalendario, reels:renderReels, anuncios:renderAnuncios, lotes:renderLotes, pendencias:renderPendencias, resultados:renderResultados, formatos:renderFormatos};
 function goToView(v, push){
-  if(!VIEWS.includes(v)) v = 'hoje';
+  if(!VIEWS.includes(v)) v = 'calendario';
   state.view = v;
   $$('#tabs [data-view]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === v)));
   $$('.view').forEach(s => s.classList.toggle('active', s.id === 'view-'+v));
@@ -809,7 +828,7 @@ function renderAll(){
 }
 function routeFromHash(){
   const m = location.hash.replace('#', '').split('/');
-  goToView(m[0] || 'hoje', false);
+  goToView(m[0] || 'calendario', false);
   if(m[1] && ITEMS[m[1]]) openDetail(m[1]); else if(state.detail) closeDetail();
 }
 

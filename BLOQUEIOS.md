@@ -1,6 +1,6 @@
 # Bloqueios e o que falta para liberar
 
-Gerado a partir dos dados do build 2026.10.14-metodo-2. Na central, a aba **Pendências** mostra o mesmo conteúdo e permite marcar cada item como liberado (com registro de quem confirmou).
+Gerado a partir dos dados do build 2026.10.14-metodo-3. Na central, a aba **Pendências** mostra o mesmo conteúdo e permite marcar cada item como liberado (com registro de quem confirmou).
 
 **Situação de hoje (44 peças: 30 Reels + 14 anúncios):** 6 liberado · 3 atenção · 11 trava publicação · 24 bloqueado.
 
@@ -41,6 +41,15 @@ Gerado a partir dos dados do build 2026.10.14-metodo-2. Na central, a aba **Pend
 - **O que fornecer:** Quais mecanismos funcionam de verdade com a carta média da AVANER: compra de imóvel para aluguel, uso de crédito planejado pela empresa, negociação de carta contemplada. Grupos, valores e prazos disponíveis.
 - **Alternativa segura enquanto isso:** Falar só de critérios de decisão, sem prometer o que a carta compra.
 - **Peças que dependem disto:** M06, M10, M13, M16, M25, AN05, B03, B08, B15
+
+### S1 · Cenários da conta dos R$ 300 mil
+
+- **Tipo:** Bloqueio (não grava nem publica)
+- **Prazo sugerido:** 30/10 (M06 sai em 05/11; M13 em 12/11)
+- **Responsável:** Michael
+- **O que fornecer:** Confirmar se a parcela de R$ 511 do Grupo 10.023 (carta de R$ 150 mil) é do plano reduzido e como a administradora recalcula a parcela depois da contemplação. Com isso, Claude calcula dois exemplos (contemplação cedo e tarde, sem reajuste) e Michael aprova os números antes da gravação.
+- **Alternativa segura enquanto isso:** Gravar a versão segura (sem números).
+- **Peças que dependem disto:** M06, M13, AN05
 
 ### R1 · Frases que dependem de experiência real
 
@@ -186,14 +195,14 @@ Gerado a partir dos dados do build 2026.10.14-metodo-2. Na central, a aba **Pend
 | M03 | Cinco regras de dinheiro | Reel | Liberado | — | — |
 | M04 | Consórcio não tem juros, mas tem custo | Reel | BLOQUEADO | N1, N2 | sim |
 | M05 | Ganha R$ 20 mil e não constrói patrimônio | Reel | Liberado | — | — |
-| M06 | A conta dos R$ 300 mil | Reel | BLOQUEADO | N1, E1, K1 | sim |
+| M06 | A conta dos R$ 300 mil | Reel | BLOQUEADO | N1, E1, K1, S1 | sim |
 | M07 | Antes de seguir um conselho | Reel | Liberado | — | — |
 | M08 | Depois da assinatura | Reel | BLOQUEADO | P1 | — |
 | M09 | Meia parcela: fiz besteira? | Reel reserva | Atenção | H1 | — |
 | M10 | Quando eu recomendo e quando não | Reel | BLOQUEADO | E1, D1 | — |
 | M11 | Dois anos sem contemplar | Reel | BLOQUEADO | J1, P1 | — |
 | M12 | Dinheiro perdido sem perceber | Reel | Atenção | F1 | — |
-| M13 | Por que algumas pessoas compram mais imóveis | Reel | BLOQUEADO | N1, N2, E1, K1 | sim |
+| M13 | Por que algumas pessoas compram mais imóveis | Reel | BLOQUEADO | N1, N2, E1, K1, S1 | sim |
 | M14 | Reserva antes de tudo | Reel | Liberado | — | — |
 | M15 | Caso real 1 | Reel | BLOQUEADO | C1 | — |
 | M16 | Consórcio não é só pra quem não tem dinheiro | Reel reserva | BLOQUEADO | E1 | — |
@@ -215,7 +224,7 @@ Gerado a partir dos dados do build 2026.10.14-metodo-2. Na central, a aba **Pend
 | AN02 | Ganha bem e não constrói patrimônio | Anúncio · Teste | Trava publicação | D1 | — |
 | AN03 | Mito: quem ganha bem não precisa de reserva | Anúncio · Teste | Trava publicação | D1 | — |
 | AN04 | Não tem juros, mas tem custo | Anúncio · Teste | BLOQUEADO | N1, N2, D1 | — |
-| AN05 | A conta dos R$ 300 mil | Anúncio · Teste | BLOQUEADO | N1, E1, D1 | — |
+| AN05 | A conta dos R$ 300 mil | Anúncio · Teste | BLOQUEADO | N1, E1, S1, D1 | — |
 | AN06 | Convite direto para a apresentação | Anúncio · Captação | Trava publicação | D1 | — |
 | AN07 | Caso real | Anúncio · Captação | BLOQUEADO | C1, D1 | — |
 | AN08 | Portal: o acompanhamento depois da assinatura | Anúncio · Captação | BLOQUEADO | P1, D1 | — |

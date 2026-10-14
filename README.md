@@ -1,6 +1,6 @@
 # Central de Conteúdos AVANER — Método AVANER
 
-Build `2026.10.14-metodo-2`. Painel interno da campanha do Método AVANER. Contém:
+Build `2026.10.14-metodo-3`. Abre no **Calendário**: cada peça mostra o próximo passo (aprovar, gravar, editar, publicar ou o que falta para destravar). Painel interno da campanha do Método AVANER. Contém:
 
 - 30 Reels: 24 prioritários e 6 reservas.
 - 16 temas extras.
@@ -47,7 +47,7 @@ Você vai usar o SQL Editor e a tela Authentication do mesmo projeto da central 
 
 1. **Estrutura.** No **SQL Editor**, cole todo o `supabase/metodo-schema.sql` e clique em *Run*. Deve terminar sem erro. Pode rodar de novo sem problema.
 2. **Regras.** Cole todo o `supabase/metodo-regras.sql` e rode.
-   - A conferência no fim do arquivo deve mostrar **44 peças, 69 dependências e 19 pendências**.
+   - A conferência no fim do arquivo deve mostrar **44 peças, 72 dependências e 20 pendências**.
    - Sem esse arquivo, o banco recusa qualquer marcação de etapa. É de propósito: se a regra não estiver instalada, a etapa fica travada.
 3. **Cadastro aberto.** Em **Authentication > Sign In / Providers**, desmarque *Allow new users to sign up*.
 4. **Equipe.** Em **Authentication > Users > Add user > Create new user**, crie Michael, Jamille e Guilherme com e-mail, senha forte e *Auto Confirm User* marcado.
@@ -112,7 +112,7 @@ Ative a autenticação básica (usuário e senha do navegador) na aplicação, c
 
 ### 4. Primeiro acesso: confirmar que todos usam os mesmos dados
 
-1. **Build.** No rodapé deve aparecer `build 2026.10.14-metodo-2 · 30 Reels · 14 anúncios · 16 temas extras`.
+1. **Build.** No rodapé deve aparecer `build 2026.10.14-metodo-3 · 30 Reels · 14 anúncios · 16 temas extras`.
 2. **Login.** Michael e Jamille clicam em **Entrar**, cada um com o próprio e-mail.
    - A faixa fica verde: "Sincronizado com o banco · e-mail · tempo real ativo".
    - No Michael aparece também "(aprovador)".

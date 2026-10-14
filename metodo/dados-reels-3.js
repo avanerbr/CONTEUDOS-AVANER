@@ -78,10 +78,10 @@ window.METODO.reels.push(
   deps: ['B1', 'D2']
 },
 {
-  id: 'M24', data: '2026-11-23', hora: '12h15', fase: 3, classe: 'prioritario', formato: 5, lote: 'L3', versao: '1.0',
+  id: 'M24', data: '2026-11-23', hora: '12h15', fase: 3, classe: 'prioritario', formato: 5, lote: 'L3', versao: '1.1',
   tema: 'Como é o diagnóstico', objetivo: 'Conversão', duracao: '45 a 60s',
   texto_tela: 'COMO FUNCIONA O DIAGNÓSTICO',
-  gancho: 'Tem dia que eu termino uma reunião dizendo: não faça. (só se for verdade)',
+  gancho: 'Tem dia que eu termino uma reunião dizendo: não faça.',
   gancho_alt: 'Como funciona o diagnóstico, e quando eu digo não.',
   cenario: 'Sala de atendimento do escritório, vazia.',
   camera: 'Câmera na mão entrando na sala, depois apoiada na mesa.',
@@ -102,18 +102,18 @@ window.METODO.reels.push(
   deps: ['D2', 'R1']
 },
 {
-  id: 'M25', data: '2026-11-24', hora: '19h', fase: 3, classe: 'prioritario', formato: 6, lote: 'L2', versao: '1.0',
+  id: 'M25', data: '2026-11-24', hora: '19h', fase: 3, classe: 'prioritario', formato: 6, lote: 'L2', versao: '1.1',
   tema: 'Contemplou. E agora?', objetivo: 'Autoridade', duracao: '60 a 90s',
   texto_tela: 'COMPRAR, USAR OU VENDER A CARTA?',
   gancho: 'Contemplou. E agora: comprar, usar ou vender a carta?',
   gancho_alt: 'A mesma carta, três decisões diferentes.',
   cenario: 'Sentado, com três colunas na tela montadas na edição.',
   camera: 'Tripé, plano médio.',
-  direcao: 'Os usos permitidos do crédito dependem do regulamento de cada grupo: preencher com o grupo real. Negociação de carta sem prometer comprador nem valor.',
+  direcao: 'Usos citados conforme os grupos HS e Yamaha trabalhados pela AVANER (imóvel novo ou usado, terreno, construção, quitação de financiamento); se mostrar um grupo específico, conferir o regulamento dele. Negociação de carta sem prometer comprador nem valor.',
   roteiro: [
     'Contemplou. E agora: comprar, usar ou vender a carta?',
     'Opção um: comprar o imóvel que estava no plano. É o caminho mais comum. O imóvel passa por avaliação, a administradora pede garantias e documentos, e a parcela continua até o fim.',
-    'Opção dois: usar o crédito em outra finalidade que o regulamento do grupo permite, como [USOS PERMITIDOS NO GRUPO]. Cada regulamento tem as suas regras.',
+    'Opção dois: usar o crédito em outra finalidade que o regulamento do grupo permite, como imóvel novo ou usado, terreno, construção ou quitar um financiamento. Cada regulamento tem as suas regras.',
     'Opção três: negociar a carta contemplada. Pode ter quem compre, mas o valor depende do mercado e não é garantido. E a transferência precisa ser aprovada pela administradora.',
     'Qual é a melhor? A que estava no seu plano desde o começo. Decidir só na hora da contemplação costuma ser decidir com pressa.'
   ],
@@ -153,7 +153,7 @@ window.METODO.reels.push(
   deps: ['D2']
 },
 {
-  id: 'M27', data: '2026-11-26', hora: '19h', fase: 3, classe: 'reserva', formato: 10, lote: 'L3', versao: '1.0',
+  id: 'M27', data: '2026-11-26', hora: '19h', fase: 3, classe: 'reserva', formato: 10, lote: 'L3', versao: '1.1',
   tema: 'Fim da turma fundadora', objetivo: 'Conversão', duracao: '30 a 40s',
   texto_tela: 'A TURMA FUNDADORA FECHA AMANHÃ',
   gancho: 'A turma fundadora fecha amanhã.',
@@ -163,7 +163,7 @@ window.METODO.reels.push(
   direcao: 'Melhor em stories e WhatsApp. Se publicado, sem pressão: a condição só vale para quem já fez a conta.',
   roteiro: [
     'A turma fundadora fecha amanhã.',
-    'A condição inclui [CONDIÇÃO APROVADA: prioridade de agenda em até 72 horas, quatro revisões estratégicas de até 30 minutos no primeiro ano e acesso ao Clube AVANER].',
+    'A condição inclui prioridade de agenda em até setenta e duas horas, quatro revisões estratégicas de até trinta minutos no primeiro ano e acesso ao Clube AVANER.',
     'Ela tem prazo porque a agenda tem limite.',
     'Se você já fez a conta e sabe que cabe, é a hora. Se não fez, faz primeiro. A condição não vale uma decisão sem conta.',
     'O link tá no perfil.'
@@ -222,14 +222,14 @@ window.METODO.reels.push(
   deps: ['Q1']
 },
 {
-  id: 'M30', data: '2026-11-29', hora: '10h', fase: 4, classe: 'reserva', formato: 5, lote: 'L4', versao: '1.0', gancho_padrao: 'B',
+  id: 'M30', data: '2026-11-29', hora: '10h', fase: 4, classe: 'reserva', formato: 5, lote: 'L4', versao: '1.1', gancho_padrao: 'B',
   tema: 'O que eu aprendi', objetivo: 'Autoridade e vínculo', duracao: '45 a 60s',
   texto_tela: '3 COISAS QUE O CONSÓRCIO ME ENSINOU',
-  gancho: 'Três coisas que eu aprendi em [N] anos de consórcio. (só com A1 confirmado)',
+  gancho: 'Três coisas que eu aprendi em catorze anos de consórcio.',
   gancho_alt: 'O que eu diria pra mim mesmo no primeiro dia de consórcio.',
   cenario: 'Escritório, sentado, tom de conversa.',
   camera: 'Câmera na mão apoiada na mesa.',
-  direcao: 'O roteiro usa o gancho B. O gancho A, com número de anos, só depois de confirmar o número (A1).',
+  direcao: 'O roteiro abre com o gancho B. O gancho A usa 14 anos de mercado, informados pelo Michael: só use depois de conferir o número com um documento (A1).',
   roteiro: [
     'O que eu diria pra mim mesmo no primeiro dia de consórcio.',
     'Um: às vezes a melhor venda é o não. Cliente no plano errado não fica.',

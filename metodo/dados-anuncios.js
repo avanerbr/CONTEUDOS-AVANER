@@ -57,20 +57,20 @@ window.METODO.ads.push(
 },
 {
   id: 'AN04', nome: 'Não tem juros, mas tem custo', fase: 'Teste', periodo: '26/10 a 08/11', inicio: '2026-10-26', fim: '2026-11-08',
-  ativar: 'Ativar no teste só com N1 e N2 liberados', base: 'M04', formato: 2, duracao: '75 a 100s', versao: '1.0',
+  ativar: 'Ativar no teste só com N1 e N2 liberados', base: 'M04', formato: 2, duracao: '75 a 100s', versao: '1.1',
   objetivo: 'Autoridade e inscrição', publico: 'Goiânia e região, interesse em imóveis e financiamento imobiliário',
   destino: 'Página da apresentação (utm_content=AN04)',
   gancho: 'Consórcio não tem juros. Mas isso não quer dizer que ele seja de graça.',
   gancho_alt: 'Todo mundo fala que consórcio não tem juros. Quase ninguém mostra o resto da conta.',
   roteiro: [
     'Consórcio não tem juros. Mas isso não quer dizer que ele seja de graça.',
-    'Numa carta de cento e cinquenta mil, nesse grupo, a taxa de administração é de [TAXA] por cento, o que dá [VALOR DA TAXA] reais em [PRAZO] meses. Com fundo de reserva e seguro, o custo total é de [CUSTO TOTAL].',
-    'No financiamento do mesmo valor, numa simulação de hoje: entrada de [ENTRADA] e [CUSTO DO FINANCIAMENTO] de juros e encargos.',
+    'Numa carta de cento e cinquenta mil, nesse grupo, a taxa de administração é de dezesseis vírgula oito por cento, numa condição promocional: vinte e cinco mil e duzentos reais em duzentos e quarenta meses. Sem fundo de reserva, e o seguro é opcional.',
+    'No financiamento do mesmo valor, numa simulação da Caixa de hoje: entrada de [ENTRADA] e [CUSTO DO FINANCIAMENTO] de juros e encargos.',
     'Mas a comparação não para aí: tem a entrada, os reajustes e o tempo. No financiamento você pega o imóvel agora. No consórcio, depende de sorteio ou lance.',
     'No dia dezessete de novembro eu faço essa conta completa ao vivo. A inscrição tá aqui embaixo.'
   ],
   titulo: 'A conta inteira do consórcio',
-  copy: 'Consórcio não tem juros, mas tem taxa de administração, fundo de reserva, reajuste e o custo do tempo. No dia 17/11, às 19h30, faço a conta inteira ao vivo. Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.',
+  copy: 'Consórcio não tem juros, mas tem taxa de administração, reajuste e o custo do tempo. No dia 17/11, às 19h30, faço a conta inteira ao vivo. Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.',
   cta: 'Inscrever-se', deps: ['N1', 'N2', 'D1']
 },
 {
@@ -89,7 +89,7 @@ window.METODO.ads.push(
   ],
   titulo: 'R$ 300 mil: um imóvel ou um plano?',
   copy: 'Comprar à vista ou planejar com crédito? Os dois caminhos, com o cenário bom e o cenário em que a contemplação demora. No dia 17/11, às 19h30, mostro a conta ao vivo. Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.',
-  cta: 'Inscrever-se', deps: ['N1', 'E1', 'D1']
+  cta: 'Inscrever-se', deps: ['N1', 'E1', 'S1', 'D1']
 },
 {
   id: 'AN06', nome: 'Convite direto para a apresentação', fase: 'Captação', periodo: '09/11 a 16/11', inicio: '2026-11-09', fim: '2026-11-16',
@@ -210,18 +210,18 @@ window.METODO.ads.push(
 },
 {
   id: 'AN13', nome: 'Turma fundadora até 27/11', fase: 'Remarketing', periodo: '24/11 a 27/11', inicio: '2026-11-24', fim: '2026-11-27',
-  ativar: 'Ativar só com T1 liberado', base: 'M27', formato: 10, duracao: '25 a 35s', versao: '1.0',
+  ativar: 'Ativar só com T1 liberado', base: 'M27', formato: 10, duracao: '25 a 35s', versao: '1.1',
   objetivo: 'Conversão de quem pediu diagnóstico e não agendou', publico: 'Quem pediu diagnóstico e não agendou + presentes na live',
   destino: 'Agenda do diagnóstico (utm_content=AN13)',
   gancho: 'A turma fundadora fecha sexta.',
   gancho_alt: 'Último dia pra entrar com a condição da turma fundadora.',
   roteiro: [
     'A turma fundadora fecha sexta, dia vinte e sete.',
-    'A condição inclui [CONDIÇÃO APROVADA].',
+    'A condição inclui prioridade de agenda em até setenta e duas horas, quatro revisões estratégicas no primeiro ano e acesso ao Clube AVANER.',
     'Se você já fez a conta e sabe que cabe, agenda aqui embaixo. Se não fez, faz primeiro.'
   ],
   titulo: 'Turma fundadora até 27/11',
-  copy: 'A condição da turma fundadora vale até 27/11 e só faz sentido para quem já fez a conta. [CONDIÇÃO APROVADA]',
+  copy: 'A condição da turma fundadora vale até 27/11 e só faz sentido para quem já fez a conta. Inclui prioridade de agenda em até 72 horas, 4 revisões estratégicas de até 30 minutos no primeiro ano e acesso ao Clube AVANER.',
   cta: 'Agendar', deps: ['T1', 'D2']
 },
 {

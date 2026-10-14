@@ -1,7 +1,7 @@
 /* Reels M11 a M20 — Fase 2 (09/11 a 16/11) e início da Fase 3 */
 window.METODO.reels.push(
 {
-  id: 'M11', data: '2026-11-10', hora: '19h', fase: 2, classe: 'prioritario', formato: 4, lote: 'L2', versao: '1.2',
+  id: 'M11', data: '2026-11-10', hora: '19h', fase: 2, classe: 'prioritario', formato: 4, lote: 'L2', versao: '1.3',
   tema: 'Dois anos sem contemplar', objetivo: 'Objeção e confiança', duracao: '75 a 90s',
   texto_tela: '2 ANOS PAGANDO E NADA DE CONTEMPLAR?',
   gancho: 'Michael, e se a pessoa passar dois anos pagando e não for contemplada?',
@@ -15,7 +15,7 @@ window.METODO.reels.push(
     'Jamille: E o dinheiro que ela pagou nesse tempo?',
     'Michael: Ele não some. As parcelas formam o fundo do grupo e, com os pagamentos em dia, a cota continua participando das assembleias, conforme o regulamento do grupo. A pessoa também pode ofertar lance, dentro das regras do grupo. E a carta pode ser reajustada pelo índice do contrato. Isso ajuda, mas não garante que ela acompanhe o preço do imóvel que você quer.',
     'Jamille: E se ela quiser desistir?',
-    'Michael: Aí vale o que está no contrato. A devolução existe, mas não é na hora e tem descontos previstos. Às vezes cancelar ou negociar a cota é a melhor decisão, e isso também se analisa com calma.',
+    'Michael: Aí vale o que está no contrato. A devolução existe, mas não é na hora: o dinheiro volta quando a cota desistente é sorteada ou no encerramento do grupo, e tem multa prevista no contrato. Por isso desistir quase nunca compensa. Às vezes negociar a cota é a melhor decisão, e isso também se analisa com calma.',
     'Michael: Então eu monto todo plano supondo o pior cenário: que a contemplação vai demorar. Se a pessoa não aguenta esperar, consórcio não é pra ela agora.',
     'Jamille: E é por isso que a gente acompanha a cota todo mês.'
   ],
@@ -23,7 +23,7 @@ window.METODO.reels.push(
     'Pode acontecer, e ninguém garante a data.',
     'O dinheiro não some: fundo do grupo, assembleias com a cota em dia e possibilidade de lance, conforme o regulamento.',
     'A carta pode ser reajustada pelo índice do contrato, sem garantia de acompanhar o preço do imóvel.',
-    'Desistir: devolução conforme contrato, não é imediata e tem descontos. Em alguns casos, cancelar ou negociar é a melhor decisão.',
+    'Desistir: devolução só quando a cota desistente é sorteada ou no fim do grupo, com multa prevista no contrato. Por isso quase nunca compensa; às vezes negociar a cota é melhor.',
     'O plano já nasce supondo que vai demorar. A Jamille fecha com o acompanhamento mensal.'
   ],
   edicao: 'Cortes alternando entre os dois. Nome e função na primeira aparição (“Jamille, relacionamento com o cliente”). Legenda com cor diferente para cada pessoa. Sem música na resposta sobre desistência.',
@@ -33,11 +33,11 @@ window.METODO.reels.push(
   deps: ['J1', 'P1']
 },
 {
-  id: 'M12', data: '2026-11-11', hora: '12h15', fase: 2, classe: 'prioritario', formato: 3, lote: 'L2', versao: '1.0',
+  id: 'M12', data: '2026-11-11', hora: '12h15', fase: 2, classe: 'prioritario', formato: 3, lote: 'L2', versao: '1.1',
   tema: 'Dinheiro perdido sem perceber', objetivo: 'Alcance com autoridade', duracao: '45 a 60s',
   texto_tela: '“QUEM GANHA MAIS, GUARDA MAIS.” SERÁ?',
   gancho: 'Tem gente perdendo dinheiro todo mês sem perceber.',
-  gancho_alt: 'Regra número 1 do Buffett: nunca perca dinheiro. Tem gente quebrando essa regra todo mês. (só com a fonte confirmada, F1)',
+  gancho_alt: 'Regra número 1 do Buffett: nunca perca dinheiro. Tem gente quebrando essa regra todo mês.',
   cenario: 'Sentado no escritório ou de pé encostado na mesa.',
   camera: 'Plano médio. Nos 2 primeiros segundos, a frase comum em tela cheia, sem autor.',
   direcao: 'Reação a uma frase comum, não a uma pessoa. O item 4 é o que dá credibilidade: falar com calma que consórcio errado também é dinheiro perdido.',
@@ -93,7 +93,7 @@ window.METODO.reels.push(
   cta: 'Quer montar essa conta pro seu caso? Me chama no direct. (Com a automação K1 funcionando: “Comenta PLANO”.) Dia 17 eu mostro a conta completa ao vivo.',
   anuncio: 'Alto, depois da simulação aprovada.',
   alt_seguro: 'Sem números: explicar os três fatores (custo do crédito, tempo de espera, reserva para o cenário ruim) e dizer que a conta muda caso a caso.',
-  deps: ['N1', 'N2', 'E1', 'K1']
+  deps: ['N1', 'N2', 'E1', 'K1', 'S1']
 },
 {
   id: 'M14', data: '2026-11-13', hora: '12h15', fase: 2, classe: 'prioritario', formato: 7, lote: 'L1', versao: '1.1',

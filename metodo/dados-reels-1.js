@@ -1,7 +1,7 @@
 /* Reels M01 a M10 — Fase 1 (31/10 a 08/11) e início da Fase 2 */
 window.METODO.reels.push(
 {
-  id: 'M01', data: '2026-10-31', hora: '10h', fase: 1, classe: 'prioritario', formato: 10, lote: 'L1', versao: '1.1',
+  id: 'M01', data: '2026-10-31', hora: '10h', fase: 1, classe: 'prioritario', formato: 10, lote: 'L1', versao: '1.2',
   tema: 'Riqueza que não aparece (Goiânia)', objetivo: 'Alcance local e identificação', duracao: '35 a 45s',
   texto_tela: 'NEM SEMPRE QUEM APARENTA TER MAIS É QUEM TEM MAIS',
   gancho: 'Goiânia tem um tipo de riqueza que muita gente de fora não entende.',
@@ -12,7 +12,7 @@ window.METODO.reels.push(
   roteiro: [
     'Goiânia tem um tipo de riqueza que muita gente de fora não entende.',
     'Aqui, nem sempre quem aparenta ter mais é quem construiu mais.',
-    'Pelo menos é o que eu percebo nas conversas que eu tenho aqui no escritório: nem sempre quem mostra mais é quem tem um plano. (só se for verdade)',
+    'Pelo menos é o que eu percebo nas conversas que eu tenho aqui no escritório: nem sempre quem mostra mais é quem tem um plano.',
     'E isso me fez pensar numa coisa. Patrimônio não costuma vir só da renda alta. Vem de transformar, com calma, uma parte do que se ganha em alguma coisa que fica.',
     'Devagar, com plano, sem pressa nenhuma de mostrar.',
     'Porque aparência você compra numa tarde. Patrimônio leva anos.',
@@ -93,33 +93,33 @@ window.METODO.reels.push(
   deps: []
 },
 {
-  id: 'M04', data: '2026-11-03', hora: '19h', fase: 1, classe: 'prioritario', formato: 2, lote: 'L2', versao: '1.1',
+  id: 'M04', data: '2026-11-03', hora: '19h', fase: 1, classe: 'prioritario', formato: 2, lote: 'L2', versao: '1.2',
   tema: 'Consórcio não tem juros, mas tem custo', objetivo: 'Autoridade', duracao: '75 a 100s',
   texto_tela: 'NÃO TEM JUROS. MAS TEM CUSTO.',
   gancho: 'Consórcio não tem juros. Mas isso não quer dizer que ele seja de graça.',
   gancho_alt: 'Todo mundo fala que consórcio não tem juros. Quase ninguém mostra o resto da conta.',
   cenario: 'Quadro branco no escritório, com a conta escrita antes de gravar e completada ao vivo.',
   camera: 'Tripé fixo enquadrando quadro e Michael. Segunda câmera fechada no quadro, se possível.',
-  direcao: 'Os colchetes são preenchidos com um grupo real de cerca de R$ 150 mil e uma simulação de banco do mesmo dia. A comparação tem que ser completa: entrada, prazo, reajustes, rendimento do dinheiro aplicado e tempo até ter o imóvel.',
+  direcao: 'Consórcio: Grupo 10.023 Yamaha, carta de R$ 150 mil, taxa promocional de 16,8% em 240 meses, sem fundo de reserva, seguro opcional. Financiamento: fazer a simulação na Caixa no dia da gravação (mesmo valor) e preencher os colchetes da fala 4 com ela; mostrar a tela da simulação com a data. A comparação tem que ser completa: entrada, prazo, reajustes, rendimento do dinheiro aplicado e tempo até ter o imóvel.',
   roteiro: [
     'Consórcio não tem juros. Isso é verdade. Mas isso não quer dizer que ele seja de graça.',
     'Vou fazer a conta com uma carta de cento e cinquenta mil reais.',
-    'O principal custo é a taxa de administração. Nesse grupo, ela é de [TAXA] por cento no plano inteiro. Na carta de cento e cinquenta mil, isso dá [VALOR DA TAXA] reais, divididos em [PRAZO] meses.',
-    'Tem também o fundo de reserva, de [FUNDO] por cento, e o seguro, quando o grupo tem. Somando tudo: [CUSTO TOTAL] reais.',
-    'Agora, o mesmo valor no financiamento, numa simulação de hoje: entrada de [ENTRADA], [PRAZO DO FINANCIAMENTO] meses e [CUSTO DO FINANCIAMENTO] de juros e encargos.',
+    'O principal custo é a taxa de administração. Nesse grupo, ela está em dezesseis vírgula oito por cento no plano inteiro, numa condição promocional. Na carta de cento e cinquenta mil, isso dá vinte e cinco mil e duzentos reais, divididos em duzentos e quarenta meses.',
+    'Esse grupo não tem fundo de reserva, e o seguro é opcional. Então, sem seguro, o custo do consórcio é esse: vinte e cinco mil e duzentos reais, mais os reajustes do contrato.',
+    'Agora, o mesmo valor no financiamento, numa simulação da Caixa de hoje: entrada de [ENTRADA], [PRAZO DO FINANCIAMENTO] meses e [CUSTO DO FINANCIAMENTO] de juros e encargos.',
     'Só que comparar taxa com juros é pouco. Tem a entrada que você precisa ter agora, os reajustes dos dois lados e quanto o seu dinheiro renderia se continuasse aplicado. E tem um custo que não aparece no quadro: o tempo. No financiamento você pega o imóvel agora. No consórcio, você depende de sorteio ou de lance.',
     'E mais um detalhe: a carta e a parcela podem ser reajustadas, conforme o contrato. Não é juros, é atualização. Mas pesa no seu bolso, então tem que estar no plano.',
     'Barato ou caro depende do seu objetivo. Por isso eu sempre faço a conta inteira antes.'
   ],
   guia: [
-    'A conta com a carta de R$ 150 mil: taxa de administração em reais.',
-    'Fundo de reserva e seguro: o custo total no quadro.',
+    'A conta com a carta de R$ 150 mil: 16,8% de taxa, R$ 25.200 em 240 meses.',
+    'Sem fundo de reserva e seguro opcional: o custo é a taxa, R$ 25.200, mais reajustes.',
     'A mesma conta no financiamento, com a simulação do dia, e o que mais entra: entrada, reajustes e o rendimento do dinheiro aplicado.',
     'O custo que não está no quadro: o tempo até a contemplação.',
     'Reajuste conforme o contrato: não é juros, mas precisa caber no plano.'
   ],
-  edicao: 'Números do quadro também em texto grande na tela quando ditos. Rodapé fixo: “Exemplo com o grupo [NOME], tabela de [DATA]. Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.” Close no quadro em “o custo que não aparece no quadro”.',
-  legenda: 'Consórcio não tem juros, mas tem taxa de administração, fundo de reserva, reajuste conforme o contrato e o custo do tempo. Fiz a conta inteira com uma carta de R$ 150 mil.',
+  edicao: 'Números do quadro também em texto grande na tela quando ditos. Rodapé fixo: “Exemplo: Grupo 10.023 Yamaha Consórcios, taxa promocional de 16,8%, condição vigente em [DATA DA GRAVAÇÃO]. Financiamento: simulação Caixa de [DATA DA GRAVAÇÃO]. Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.” Close no quadro em “o custo que não aparece no quadro”.',
+  legenda: 'Consórcio não tem juros, mas tem taxa de administração, reajuste conforme o contrato e o custo do tempo. Fiz a conta inteira com uma carta de R$ 150 mil.',
   cta: 'Quer que eu faça essa conta com outro valor? Comenta aqui o valor da carta.',
   anuncio: 'Alto. Formato de quadro branco é o que mais rodou no concorrente. Usar a versão completa com fechamento de convite.',
   alt_seguro: 'Versão conceitual sem números: explicar os componentes do custo (taxa de administração, fundo de reserva, seguro quando houver, reajuste e o tempo até a contemplação) e dizer “cada grupo tem os seus números; antes de assinar, peça a conta inteira por escrito”.',
@@ -184,7 +184,7 @@ window.METODO.reels.push(
   cta: 'Quer essa conta com os seus números? Me chama no direct que eu faço com você. (Com a automação K1 funcionando: “Comenta CONTA que eu te mando a simulação”.)',
   anuncio: 'Alto. Candidato principal para o teste e para a captação, desde que a simulação esteja completa.',
   alt_seguro: 'Sem números: apresentar os dois caminhos como critérios (liquidez, tempo até ter o bem, custo total, risco de demora) e convidar para fazer a conta individual.',
-  deps: ['N1', 'E1', 'K1']
+  deps: ['N1', 'E1', 'K1', 'S1']
 },
 {
   id: 'M07', data: '2026-11-06', hora: '12h15', fase: 1, classe: 'prioritario', formato: 3, lote: 'L1', versao: '1.1',
@@ -256,7 +256,7 @@ window.METODO.reels.push(
   gancho_alt: 'Meia parcela é armadilha ou porta de entrada?',
   cenario: 'Escritório, sentado.',
   camera: 'Tripé, plano médio.',
-  direcao: 'Responder com critérios, sem falar mal de nenhuma administradora. Preparar antes as respostas para comentários negativos sobre administradoras (H1).',
+  direcao: 'Responder com critérios, sem falar mal de nenhuma administradora. Resposta pronta para comentários do tipo “consórcio é furada” ou “administradora rouba”: “Consórcio não é furada. O que costuma dar errado é entrar com a expectativa errada, e muitas vezes o problema não é a administradora, é a forma como o plano foi vendido: prometeram o que consórcio não entrega. Se quiser, eu olho o seu caso com você.” Sem citar nomes de administradoras ou de representantes.',
   roteiro: [
     'Essa dúvida aparece muito: fiz consórcio de meia parcela. Fiz besteira?',
     'Depende de três números. E você acha os três com a administradora.',

@@ -9,7 +9,7 @@ window.METODO = {
     fim_condicao: '2026-11-27',
     inicio_reels: '2026-10-31',
     fim_reels: '2026-11-29',
-    build: '2026.10.14-metodo-2',
+    build: '2026.10.14-metodo-3',
     rodape_conformidade: 'Contemplação por sorteio ou lance. Condições conforme regulamento do grupo.'
   },
 
@@ -90,6 +90,9 @@ window.METODO = {
     { id: 'D3', severidade: 'publicacao', assunto: 'Página da aula permanente',
       falta: 'Página com a gravação editada da live, cadastro e convite para o diagnóstico no final.',
       responsavel: 'Guilherme', alternativa: '' },
+    { id: 'S1', severidade: 'bloqueio', assunto: 'Cenários da conta dos R$ 300 mil',
+      falta: 'Confirmar se a parcela de R$ 511 do Grupo 10.023 (carta de R$ 150 mil) é do plano reduzido e como a administradora recalcula a parcela depois da contemplação. Com isso, Claude calcula dois exemplos (contemplação cedo e tarde, sem reajuste) e Michael aprova os números antes da gravação.',
+      responsavel: 'Michael', alternativa: 'Gravar a versão segura (sem números).' },
     { id: 'H1', severidade: 'atencao', assunto: 'Respostas prontas para críticas à administradora',
       falta: 'Respostas preparadas para comentários que chamam administradoras de “furada”, antes de publicar o vídeo sobre meia parcela.',
       responsavel: 'Michael', alternativa: '' },
@@ -128,7 +131,8 @@ window.METODO = {
   historico: [
     { versao: '1.0', data: '2026-10-13', nota: 'Biblioteca completa: 30 Reels, 14 anúncios e 16 temas extras, com os ajustes das revisões de M01, M03, M07, M14, M23 e M26.' },
     { versao: '1.1', data: '2026-10-13', nota: 'Auditoria: M11 v1.2 (sorteio condicionado a pagamentos em dia e ao regulamento; depende também de P1), M17 passa a depender de P1, B05 sem “vi uma pessoa”, P1 inclui apoio na compra e na negociação da carta.' },
-    { versao: '1.2', data: '2026-10-14', nota: 'Build metodo-2: regras de bloqueio também no banco, aprovador para versão segura e liberação de pendências, sincronização com checagem de versão. Nenhum roteiro alterado.' }
+    { versao: '1.2', data: '2026-10-14', nota: 'Build metodo-2: regras de bloqueio também no banco, aprovador para versão segura e liberação de pendências, sincronização com checagem de versão. Nenhum roteiro alterado.' },
+    { versao: '1.3', data: '2026-10-14', nota: 'Dados do Michael: M04 e AN04 com o Grupo 10.023 (16,8%, 240 meses, sem fundo de reserva, seguro opcional; financiamento Caixa no dia da gravação); M11 com a regra de desistência; M25 com os usos do crédito; M27 e AN13 com a condição da turma fundadora; M30 com 14 anos; M01, M12 e M24 sem marcações; resposta pronta no M09; nova pendência S1 para os cenários de M06, M13 e AN05.' }
   ],
 
   reels: [],

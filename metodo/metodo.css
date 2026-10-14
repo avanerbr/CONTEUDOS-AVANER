@@ -235,3 +235,13 @@ footer{max-width:1180px;margin:0 auto;padding:16px;border-top:1px solid var(--li
   .top-actions input[type=search]{width:100%}
   #detailPanel{padding:14px 16px 80px}
 }
+
+/* Calendário didático */
+.cal-item .na{display:block;margin-top:2px;font:600 11px/1.3 var(--font-mono);color:var(--ink-soft)}
+.cal-item .na.bloq{color:var(--alert)}
+.cal-item .na.pub{color:var(--gold-ink)}
+.cal-item .na.ok{color:var(--positive)}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;margin:6px 0 12px}
+.howto summary{cursor:pointer;font-weight:700}
+.howto ol{margin:8px 0 2px;padding-left:20px}
+.howto li{margin:4px 0}
