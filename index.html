@@ -6,136 +6,76 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Central de Campanhas AVANER</title>
-<meta name="description" content="Painel de execução das campanhas AVANER — Consórcio Yamaha">
+<meta name="robots" content="noindex, nofollow">
+<title>Central de Conteúdos AVANER</title>
+<meta name="description" content="Central de conteúdos do Método AVANER: Reels, anúncios, calendário, produção e bloqueios">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="central-v4.css?v=20261002-v4">
+<link rel="stylesheet" href="metodo/metodo.css?v=2026.10.14-metodo-2">
 </head>
 <body>
 
 <header class="top">
   <div class="brand">
-    <h1 id="brandTitle">Grupo <em>11.000</em></h1>
-    <span class="sub" id="brandSub">Central de campanha · Avaner · Consórcio Yamaha</span>
+    <h1>Método <em>AVANER</em></h1>
+    <span class="sub">Central de conteúdos · Reels, anúncios e produção</span>
   </div>
   <div class="top-actions">
-    <label class="campaign-switch" for="campaignSelect"><span>Campanha</span><select id="campaignSelect" aria-label="Selecionar campanha"></select></label>
-    <div class="gsearch">
-      <input id="globalSearch" type="search" placeholder="Buscar em tudo (código, título, texto)..." autocomplete="off" aria-label="Busca global">
+    <div class="gwrap">
+      <input id="globalSearch" type="search" placeholder="Buscar código, tema ou frase..." autocomplete="off" aria-label="Busca global">
       <div id="globalResults" class="gresults" hidden></div>
     </div>
-    <button class="theme-toggle" id="themeToggle" type="button">Tema: sistema</button>
+    <button class="btn" id="loginBtn" type="button">Entrar</button>
+    <button class="btn" id="themeToggle" type="button" aria-label="Alternar tema">Tema</button>
   </div>
 </header>
 
 <nav class="tabs" id="tabs" role="tablist" aria-label="Seções">
   <button role="tab" aria-selected="true" data-view="hoje">Hoje</button>
-  <button role="tab" aria-selected="false" data-view="geral">Visão geral</button>
-  <button role="tab" aria-selected="false" data-view="execucao">Execução</button>
   <button role="tab" aria-selected="false" data-view="calendario">Calendário</button>
-  <button role="tab" aria-selected="false" data-view="roteiros">Roteiros</button>
+  <button role="tab" aria-selected="false" data-view="reels">Reels</button>
   <button role="tab" aria-selected="false" data-view="anuncios">Anúncios</button>
-  <button role="tab" aria-selected="false" data-view="whatsapp">WhatsApp</button>
-  <button role="tab" aria-selected="false" data-view="numeros">Números</button>
+  <button role="tab" aria-selected="false" data-view="lotes">Lotes</button>
   <button role="tab" aria-selected="false" data-view="pendencias">Pendências <span class="badge" id="pendBadge"></span></button>
+  <button role="tab" aria-selected="false" data-view="resultados">Resultados</button>
+  <button role="tab" aria-selected="false" data-view="formatos">Formatos</button>
 </nav>
 
 <main>
-  <div id="connStatus" class="conn-status"></div>
+  <div id="conn" class="conn local">Carregando…</div>
 
-  <section class="view active" id="view-hoje">
-    <p class="eyebrow" id="hojeEyebrow">Hoje</p>
-    <h2 id="hojeTitle">Hoje</h2>
-    <p class="lede" id="hojeLede"></p>
-    <div id="hojeBody"></div>
-  </section>
-
-  <section class="view" id="view-geral">
-    <p class="eyebrow">Campanha</p>
-    <h2>Visão geral</h2>
-    <div class="stats" id="geralDates"></div>
-    <div class="section-block">
-      <h3>Andamento</h3>
-      <div class="stats" id="geralStats"></div>
-      <div class="exec-progress" id="geralBar"></div>
-      <div class="exec-legend" id="geralLegend"></div>
-    </div>
-    <div class="section-block">
-      <h3>Pendências abertas</h3>
-      <div id="geralPend"></div>
-    </div>
-    <div class="section-block prose" id="geralEstrategia">
-      <h3>Estratégia</h3>
-    </div>
-  </section>
-
-  <section class="view" id="view-execucao">
-    <p class="eyebrow">Produção</p>
-    <h2>Execução</h2>
-    <p class="lede">Gravado, editado e publicado de cada Reel e anúncio. Marcar uma etapa marca as anteriores. Conteúdo bloqueado não pode ser marcado como publicado.</p>
-    <div class="filters" id="execFilters">
-      <input class="search-box" id="execSearch" type="search" placeholder="Buscar por código ou título...">
-    </div>
-    <p class="result-count" id="execCount"></p>
-    <div class="table-scroll">
-      <table class="exec-table">
-        <thead><tr><th>Quando</th><th>Código</th><th>Título</th><th>Situação</th><th>Gravado</th><th>Editado</th><th>Publicado</th><th>Notas</th></tr></thead>
-        <tbody id="execBody"></tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="view" id="view-calendario">
-    <p class="eyebrow" id="calEyebrow">Calendário da campanha</p>
-    <h2>Calendário</h2>
-    <p class="lede">Clique num conteúdo pra abrir o roteiro. A bolinha mostra a etapa de produção; a borda mostra a situação (liberado, atenção, bloqueado).</p>
-    <div class="exec-legend" id="calLegend"></div>
-    <div id="calBody"></div>
-  </section>
-
-  <section class="view" id="view-roteiros">
-    <p class="eyebrow" id="reelsEyebrow">Reels</p>
-    <h2>Roteiros</h2>
-    <p class="lede">O texto é o esqueleto do que falar. Grave com a sua cadência.</p>
-    <div class="filters" id="rotFilters">
-      <input class="search-box" id="rotSearch" type="search" placeholder="Buscar por palavra, gancho ou legenda...">
-    </div>
-    <p class="result-count" id="rotCount"></p>
-    <div class="script-list" id="rotList"></div>
-  </section>
-
-  <section class="view" id="view-anuncios">
-    <p class="eyebrow">Tráfego pro WhatsApp</p>
-    <h2>Anúncios</h2>
-    <p class="lede" id="adsLede"></p>
-    <div class="script-list" id="adList"></div>
-  </section>
-
-  <section class="view" id="view-whatsapp">
-    <p class="eyebrow">Entrada dos leads</p>
-    <h2>WhatsApp</h2>
-    <p class="lede">Todo lead vai direto pro WhatsApp do Michael, sem resposta automática. Configure no Meta a mensagem pré-preenchida de cada anúncio e Reel turbinado; ela mostra de onde o lead veio e qual assunto trouxe ele.</p>
-    <div id="waBody"></div>
-  </section>
-
-  <section class="view" id="view-numeros">
-    <p class="eyebrow">Tabela oficial</p>
-    <h2>Números</h2>
-    <div id="numBody"></div>
-  </section>
-
-  <section class="view" id="view-pendencias">
-    <p class="eyebrow">Confirmações com a Yamaha</p>
-    <h2>Pendências</h2>
-    <p class="lede">PENDENTE deixa os conteúdos ligados em atenção. BLOQUEADO impede marcar como publicado. CONFIRMADO tira os avisos dos conteúdos.</p>
-    <div id="pendBody"></div>
-  </section>
+  <section class="view active" id="view-hoje"></section>
+  <section class="view" id="view-calendario"></section>
+  <section class="view" id="view-reels"></section>
+  <section class="view" id="view-anuncios"></section>
+  <section class="view" id="view-lotes"></section>
+  <section class="view" id="view-pendencias"></section>
+  <section class="view" id="view-resultados"></section>
+  <section class="view" id="view-formatos"></section>
 </main>
 
-<footer id="footerText">Central de Campanhas · Avaner · uso interno</footer>
+<footer>
+  <span id="footerBuild">Central de Conteúdos AVANER</span>
+  <a href="campanhas-yamaha.html">Campanhas Yamaha (histórico)</a>
+</footer>
 
-<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<div id="detail" hidden><div id="detailPanel" role="dialog" aria-modal="true" aria-label="Detalhe da peça"></div></div>
+
+<div id="login" hidden>
+  <form id="loginForm" autocomplete="on">
+    <h3 style="margin-top:0">Entrar na central</h3>
+    <p class="small muted">Use o e-mail e a senha criados no Supabase para a equipe. Sem entrar, o status fica salvo só neste navegador.</p>
+    <label for="loginEmail">E-mail</label>
+    <input id="loginEmail" type="email" autocomplete="username" required>
+    <label for="loginPass">Senha</label>
+    <input id="loginPass" type="password" autocomplete="current-password" required>
+    <p class="msg" id="loginMsg"></p>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn" type="button" id="loginCancel">Cancelar</button>
+      <button class="btn primary" type="submit">Entrar</button>
+    </div>
+  </form>
+</div>
 
 <div id="tp" hidden>
   <div id="tpGuide"></div>
@@ -144,6 +84,7 @@
     <button id="tpPlay" class="go" type="button">▶ Rolar</button>
     <button id="tpSlow" type="button" aria-label="Mais devagar">−</button><span id="tpSpd">vel 3</span><button id="tpFast" type="button" aria-label="Mais rápido">+</button>
     <button id="tpSmall" type="button" aria-label="Diminuir letra">A−</button><button id="tpBig" type="button" aria-label="Aumentar letra">A+</button>
+    <button id="tpMode" type="button">Ver guia</button>
     <button id="tpMirror" type="button">Espelhar</button>
     <button id="tpTop" type="button">Início</button>
     <button id="tpClose" type="button">Fechar</button>
@@ -152,18 +93,23 @@
 
 <script>
 window.addEventListener('error', function(e){
-  try { var el=document.getElementById('connStatus'); if(el){ el.className='conn-status warn'; el.innerHTML='<span class="conn-warn">● Erro de carregamento: '+String(e.message||'erro no JavaScript')+'.</span>'; } } catch(_){}
+  try { var el=document.getElementById('conn'); if(el){ el.className='conn err'; el.textContent='Erro de carregamento: '+String(e.message||'erro no JavaScript'); } } catch(_){}
 });
-window.addEventListener('unhandledrejection', function(e){ console.error(e.reason); });
 </script>
-<script src="central-v4.bundle.js?v=20261002-v4"></script>
+<script src="supabase-config.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/dados-base.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/dados-reels-1.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/dados-reels-2.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/dados-reels-3.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/dados-anuncios.js?v=2026.10.14-metodo-2"></script>
+<script src="metodo/app.js?v=2026.10.14-metodo-2"></script>
 <script>
 (function(){
   var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js';
   s.async=true;
-  s.onload=function(){ if(window.initSupabaseSync) window.initSupabaseSync(); };
-  s.onerror=function(){ console.warn('Supabase CDN indisponível; painel segue com backup local.'); };
+  s.onload=function(){ if(window.MetodoSync) window.MetodoSync.init(); };
+  s.onerror=function(){ if(window.MetodoSync) window.MetodoSync.cdnFail(); };
   document.head.appendChild(s);
 })();
 </script>
